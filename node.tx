@@ -1,0 +1,39 @@
+1.first fo all we have to create a file like backend-ph-tour-manangement system.
+2.then will git init.
+3.then will create gitignore file and write node_modules
+4.then create a branch like development.
+5.then git add . and git commit
+6.then again branch create like project-setup
+7.then npm init -y
+8.then =========== npm i -D typescript
+9.then =========== tsc --init
+10.then ======= rootDir == "./src" and outDir== "./dist"
+11.then ======= npm i express mongoose zod jsonwebtoken cors dotenv === these are main dependency which are need after our project live or production.
+And dev dependency is such as package which are use at the time of development not project live or production.
+12. then ============npm i ts-node-dev @types/express @types/cors @types/dotenv @types/jsonwebtoken ======these are dependency which are use locally
+13. then create =====src and dist folder
+
+========== MVC ======== model view controller 
+14. view means frontend request ==> controller ==> model 
+model ==> view => user
+15. handled three type of error like (1) unhandled rejection error (2) uncaught rejection error (3) signal termination error.
+16. we have to ====typescript eslint web side to set == install
+npm install --save-dev eslint @eslint/js typescript typescript-eslint
+and create this file =====in root file ====== eslint.config.mjs
+and keep these codes ========= 
+// @ts-check
+
+import eslint from '@eslint/js';
+import tseslint from 'typescript-eslint';
+
+export default tseslint.config(
+  eslint.configs.recommended,
+  tseslint.configs.recommended,
+);
+
+and also keep this codes same file because of not keeping unused variable in our codes 
+export default tseslint.config(
+  eslint.configs.recommended,       ===================== (keep these code without this line)
+  tseslint.configs.strict,
+  tseslint.configs.stylistic,
+);
