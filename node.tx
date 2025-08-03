@@ -39,3 +39,5 @@ export default tseslint.config(
 );
 17. when i create user controller then i install a package ==========npm i http-status-codes
 for getting messages when we send request ===like CREATED, BAD_REQUEST
+
+18. =========npm i bcrypt js=== for hash password ====== npm i -D @types/bcrypt js
