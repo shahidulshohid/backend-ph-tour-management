@@ -1,23 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { NextFunction, Request, Response, Router } from "express";
+import { Router } from "express";
 import { UserControllers } from "./user.controller";
-import { AnyZodObject } from "zod";
-
-const validateRequest = (zodSchema: AnyZodObject) => async (req: Request, res: Response, next: NextFunction) => {
-
-    req.body = await zodSchema.parseAsync(req.body);
-
-    console.log(req.body);
-
-    // next();
-  };
+import { createUserZodSchema } from "./user.validation";
+import { validateRequest } from "../../middlewares/validedRequest";
 
 const router = Router();
 
 router.post(
-  "/register",
-
-  UserControllers.createUser
+  "/register", validateRequest(createUserZodSchema), UserControllers.createUser
 );
 router.get("/all-users", UserControllers.getAllUsers);
 export const UserRoutes = router;
